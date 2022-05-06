@@ -1,0 +1,17 @@
+<div class="gameboard-container">
+  <div id="gameboard" [ngClass]="{'activated-board': isTileSelected === true}">
+    <div *ngFor="let row of boardStructure; let y = index">
+      <app-board-tile
+        *ngFor="let square of row; let x = index"
+        [coords]="x + '-' + y"
+        [squareObject]="square"
+        [boardSquareType]="square.squareType"
+        [boardSquareText]="square.letter === '' ? square.squareType : square.letter"
+        [boardSquareColor]="square.squareType !== '' ? square.squareType + 'tile' : ''"
+        [boardSquareImage]="square.texturePath"
+        [letterPointValue]="square.letterPointValue"
+        [isTilePlaced]="square.hasTile">
+      </app-board-tile>
+    </div>
+  </div>
+</div>

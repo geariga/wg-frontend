@@ -1,1 +1,175 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.no-select {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.back-button {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.invalid-input {
+  border: 2px solid red;
+}
+
+.menu-screen-animated-tile {
+  background-size: cover;
+  border-radius: 4px;
+  height: 4vw;
+  min-height: 24px;
+  min-width: 24px;
+  position: absolute;
+  width: 4vw;
+  z-index: 1;
+}
+
+/* @-moz-keyframes spinAcrossScreen {
+  100% {
+    -moz-transform: rotate(-360deg) translate(-120%, -120%);
+  }
+}
+
+@-webkit-keyframes spinAcrossScreen {
+  100% {
+    -webkit-transform: rotate(-360deg) translate(-120%, -120%);
+  }
+}
+
+@keyframes spinAcrossScreen {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    bottom: -20%;
+    transform: rotate(-360deg);
+  }
+} */
+
+/* .menu-screen-animated-tile:nth-of-type(1) {
+  -moz-animation: spinAcrossScreen 4.5s linear infinite;
+  -webkit-animation: spinAcrossScreen 4.5s linear infinite;
+  animation: spinAcrossScreen 4.5s linear infinite;
+  background-image: url(src/assets/images/tile-texture-1.jpg);
+  bottom: 105%;
+  left: 5%;
+}
+
+.menu-screen-animated-tile:nth-of-type(2) {
+  -moz-animation: spinAcrossScreen 5s linear infinite;
+  -webkit-animation: spinAcrossScreen 5s linear infinite;
+  animation: spinAcrossScreen 5s linear infinite;
+  background-image: url(src/assets/images/tile-texture-2.jpg);
+  bottom: 120%;
+  left: 15%;
+}
+
+.menu-screen-animated-tile:nth-of-type(3) {
+  -moz-animation: spinAcrossScreen 2.5s linear infinite;
+  -webkit-animation: spinAcrossScreen 2.5s linear infinite;
+  animation: spinAcrossScreen 2.5s linear infinite;
+  background-image: url(src/assets/images/tile-texture-3.jpg);
+  bottom: 115%;
+  left: 30%;
+}
+
+.menu-screen-animated-tile:nth-of-type(4) {
+  -moz-animation: spinAcrossScreen 3s linear infinite;
+  -webkit-animation: spinAcrossScreen 3s linear infinite;
+  animation: spinAcrossScreen 3s linear infinite;
+  background-image: url(src/assets/images/tile-texture-4.jpg);
+  bottom: 125%;
+  left: 45%;
+}
+
+.menu-screen-animated-tile:nth-of-type(5) {
+  -moz-animation: spinAcrossScreen 3.75s linear infinite;
+  -webkit-animation: spinAcrossScreen 3.75s linear infinite;
+  animation: spinAcrossScreen 3.75s linear infinite;
+  background-image: url(src/assets/images/tile-texture-5.jpg);
+  bottom: 100%;
+  left: 60%;
+}
+
+.menu-screen-animated-tile:nth-of-type(6) {
+  -moz-animation: spinAcrossScreen 3.25s linear infinite;
+  -webkit-animation: spinAcrossScreen 3.25s linear infinite;
+  animation: spinAcrossScreen 3.25s linear infinite;
+  background-image: url(src/assets/images/tile-texture-4.jpg);
+  bottom: 150%;
+  left: 47%;
+}
+
+.menu-screen-animated-tile:nth-of-type(7) {
+  -moz-animation: spinAcrossScreen 3s linear infinite;
+  -webkit-animation: spinAcrossScreen 3s linear infinite;
+  animation: spinAcrossScreen 3s linear infinite;
+  background-image: url(src/assets/images/tile-texture-5.jpg);
+  bottom: 130%;
+  left: 70%;
+}
+
+.menu-screen-animated-tile:nth-of-type(8) {
+  -moz-animation: spinAcrossScreen 3.25s linear infinite;
+  -webkit-animation: spinAcrossScreen 3.25s linear infinite;
+  animation: spinAcrossScreen 3.25s linear infinite;
+  background-image: url(src/assets/images/tile-texture-1.jpg);
+  bottom: 100%;
+  left: 35%;
+}
+
+.menu-screen-animated-tile:nth-of-type(9) {
+  -moz-animation: spinAcrossScreen 3s linear infinite;
+  -webkit-animation: spinAcrossScreen 3s linear infinite;
+  animation: spinAcrossScreen 3s linear infinite;
+  background-image: url(src/assets/images/tile-texture-2.jpg);
+  bottom: 100%;
+  left: 85%;
+}
+
+.menu-screen-animated-tile:nth-of-type(10) {
+  -moz-animation: spinAcrossScreen 2.5s linear infinite;
+  -webkit-animation: spinAcrossScreen 2.5s linear infinite;
+  animation: spinAcrossScreen 2.5s linear infinite;
+  background-image: url(src/assets/images/tile-texture-3.jpg);
+  bottom: 100%;
+  left: 95%;
+}
+
+.menu-screen-animated-tile:nth-of-type(11) {
+  -moz-animation: spinAcrossScreen 2.75s linear infinite;
+  -webkit-animation: spinAcrossScreen 2.75s linear infinite;
+  animation: spinAcrossScreen 2.75s linear infinite;
+  background-image: url(src/assets/images/tile-texture-4.jpg);
+  bottom: 100%;
+  left: 52%;
+} */

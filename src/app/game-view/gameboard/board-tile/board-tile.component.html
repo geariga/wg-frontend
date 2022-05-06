@@ -1,0 +1,7 @@
+<div
+  (click)="toggleTilePlacement()"
+  [ngClass]="boardSquareColor" class="board-tile no-select"
+  [ngStyle]="{'background': boardSquareImage ? 'url(../../../../assets/images/' + boardSquareImage + ')' : ''}"
+>
+  {{ boardSquareText | uppercase }}
+</div>

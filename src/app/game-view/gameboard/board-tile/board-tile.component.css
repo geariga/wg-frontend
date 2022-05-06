@@ -1,0 +1,42 @@
+.board-tile {
+  align-items: center;
+  background: #FEF1BA;
+  border: 1px solid rgb(210, 210, 210);
+  display: flex;
+  font-weight: bold;
+  height: 3vw;
+  justify-content: center;
+  /*
+    due to the gameboard being 15x15 squares, max-height and
+    max-width * 15 must equal #gameboard max height and width
+  */
+  max-height: 67px;
+  max-width: 67px;
+  width: 3vw;
+}
+
+.twtile {
+  background: #C0504E;
+}
+
+.tltile {
+  background: #548FD5;
+}
+
+.★tile,
+.dwtile {
+  background: #E5B7B7;
+}
+
+.dltile {
+  background: #B9CCE3;
+}
+
+@media (max-width: 1024px) {
+  .board-tile {
+    max-height: 3vh;
+    max-width: 3vh;
+    min-height: 3vh;
+    min-width: 3vh;
+  }
+}

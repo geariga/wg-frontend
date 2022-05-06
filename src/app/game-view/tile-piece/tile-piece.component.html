@@ -1,0 +1,11 @@
+<div
+  [ngClass]="{
+    'selected': tileInstance?.selected === true,
+    'selected-untradeable': tileInstance?.selected === true && tileInstance?.tradeable === false
+  }"
+  class="letter-tile no-select"
+  [ngStyle]="{'background-image': 'url(../../../../assets/images/' + tileInstance?.texturePath + ')'}"
+>
+  <div class="point-value">{{ tileInstance?.letterPointValue }}</div>
+  {{ tileInstance?.letter}}
+</div>

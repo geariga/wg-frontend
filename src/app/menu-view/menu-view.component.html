@@ -1,0 +1,58 @@
+<div #container class="view-container" routerLink="/menu">
+  <!-- <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div>
+  <div class="menu-screen-animated-tile"></div> -->
+  <h1 class="no-select">🅦🅞🅡🅓-🅖🅐🅜🅔</h1>
+  <div *ngIf="currentMenu === 'main-menu'" class="menu-options">
+    <button (click)="swapMenu('create-game')" class="no-select">
+      Create New Game
+    </button>
+    <button (click)="swapMenu('join-game')" class="no-select">Join Existing Game</button>
+  </div>
+  <div *ngIf="currentMenu === 'create-game'" class="menu-options">
+    <div (click)="swapMenu('main-menu')" class="back-button">&#10060;</div>
+    <form>
+      <label for="displayName">Display Name:</label>
+      <h6>(max 12 characters)</h6>
+      <input
+        appFocusInput
+        #displayNameInput type="text" name="displayName"
+        id="displayName" autocomplete="off">
+      <button
+        (click)="createNewGame()"
+        (submit)="$event.preventDefault()"
+        class="no-select">Create</button>
+    </form>
+  </div>
+  <div *ngIf="currentMenu === 'join-game'" class="menu-options">
+    <div (click)="swapMenu('main-menu')" class="back-button">&#10060;</div>
+    <form>
+      <label for="displayName">Display Name:</label>
+      <h6>(max 12 characters)</h6>
+      <input
+        appFocusInput
+        #displayNameInput type="text" name="displayName"
+        id="displayName" autocomplete="off"><br>
+      <label for="gameIdInput">Enter Game ID</label>
+      <input
+        #gameIdInput
+        type="text"
+        name="gameIdInput"
+        id="gameIdInput"
+        autocomplete="off"
+      >
+      <button
+        (click)="joinExistingGame()"
+        (submit)="$event.preventDefault()"
+        class="no-select">Join</button>
+    </form>
+  </div>
+</div>

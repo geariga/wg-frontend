@@ -1,0 +1,11 @@
+.view-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .view-container {
+    flex-direction: column;
+  }
+}

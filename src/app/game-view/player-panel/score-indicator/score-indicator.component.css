@@ -1,0 +1,27 @@
+
+span {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  max-width: 12vw;
+  margin: 0px 2px;
+  min-width: 12vw;
+  padding: 8px;
+  text-align: center;
+}
+
+.is-not-turn {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.is-turn {
+  background: #548FD5;
+}
+
+@media (max-width: 1024px) {
+  span {
+    max-width: 24vw;
+    min-width: 24vw;
+  }
+}

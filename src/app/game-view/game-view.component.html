@@ -1,0 +1,22 @@
+<div
+  (click)="deselectTilesOnClickElsewhere($event)"
+  #container
+  routerLink="/game"
+  class="view-container"
+>
+  <app-player-panel
+    (startGameEvent)="onStartGame()"
+    [gameStarted]="gameStateService.gameStarted$ | async"
+    [gameId]="gameStateService.gameId$ | async"
+    [currentPlayers]="gameStateService.currentPlayers$ | async"
+    [tileBag]="gameStateService.tileBag$ | async"
+    [playerTurn]="gameStateService.playerTurn$ | async"
+    [thisPlayerId]="gameStateService.thisPlayersId$ | async">
+  </app-player-panel>
+  <app-gameboard
+    [gameStarted]="gameStateService.gameStarted$ | async"
+    [boardStructure]="gameStateService.boardState$ | async"
+    [isThisPlayersTurn]="currentPlayersTurn === thisPlayerId"
+    [isTileSelected]="isTileSelected">
+  </app-gameboard>
+</div>

@@ -1,0 +1,72 @@
+<div class="player-panel-container">
+  <header>
+    <app-score-indicator
+      *ngFor="let player of currentPlayers"
+      [player]="player"
+      [playerTurn]="playerTurn"
+    >
+    </app-score-indicator>
+  </header>
+  <section>
+    <div class="rack-container">
+      <div class="rack-backdrop">
+        <div class="shadower"></div>
+        <ng-container *ngFor="let tile of gameStateService.thisPlayersTiles$ | async">
+          <app-tile-piece
+            #tilePiece
+            (click)="handleSelectTile(tilePiece)"
+            *ngIf="tile.displayed === true"
+            [tileInstance]="tile">
+          </app-tile-piece>
+        </ng-container>
+      </div>
+      <div class="rack-foreground"></div>
+    </div>
+    <div class="player-controls">
+      <div *ngIf="gameStarted && currentMenu === 'game-controls'">
+        <h4>Tiles Remaining: {{ tileBag?.length }}</h4>
+        <button (click)="tradeTiles()" class="disabled no-select">
+          <img alt="A satchel of game tiles." src="../../assets/images/satchel.svg">
+          Trade Tile
+        </button>
+        <button (click)="changeCurrentMenu('checking-word')">
+          <img alt="Check Word" src="../../assets/images/search-icon.png">
+          Check Word
+        </button>
+        <button (click)="handleTurnEnd()" class="disabled no-select">
+          <img alt="End Turn" src="../../assets/images/cross-mark.png">
+          End Turn
+        </button>
+      </div>
+      <div *ngIf="gameStarted && currentMenu === 'checking-word'">
+        <form>
+          <div (click)="changeCurrentMenu('game-controls')" class="back-button">&#10060;</div>
+          <label for="wordChecked">Enter Word</label>
+          <input
+            #checkWordInput
+            appFocusInput
+            type="text"
+            name="wordChecked"
+            id="wordChecked"
+            autocomplete="off"
+          >
+          <button
+            (click)="checkWordValidity()"
+            (submit)="$event.preventDefault()"
+            class="no-select"
+          >
+            <img alt="Check Word" src="../../assets/images/search-icon.png">
+            Check Word
+          </button>
+        </form>
+      </div>
+      <div *ngIf="!gameStarted">
+        <button (click)="startGame()" class="no-select">
+          <img class="green" alt="Play" src="../../assets/images/play-button.svg">
+          Start Game
+        </button>
+      </div>
+      <h3>Game ID: {{ gameId }}</h3>
+    </div>
+  </section>
+</div>
