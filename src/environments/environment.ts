@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  socketServer: 'http://localhost:9090'
+  socketServer: 'http://localhost:9090/api/word'
 };
 
 /*

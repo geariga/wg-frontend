@@ -12,6 +12,7 @@ import {
   ViewChild,
   ViewChildren
 } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import { GameStateService } from 'src/app/shared/services/game-state/game-state.service';
 import { GameService } from 'src/app/shared/services/game/game.service';
 import { SocketService } from 'src/app/shared/services/socket/socket.service';
@@ -23,10 +24,9 @@ import {
   GAME_START_EVENT,
   START_TURN_EVENT,
   TRADE_TILES_EVENT,
-  UPDATE_STATE_FROM_CLIENT,
-  WORD_API_URL
+  UPDATE_STATE_FROM_CLIENT
 } from '../../constants';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { first } from 'rxjs';
 
 @Component({
@@ -47,6 +47,8 @@ export class PlayerPanelComponent implements OnInit, OnChanges {
   @Input() tileBag!: TileBag | null;
   @Input() playerTurn!: string | null;
   @Input() thisPlayerId!: string | undefined | null;
+
+  private WORD_API_URL = environment.socketServer;
 
   public currentMenu: string = 'game-controls';
 
@@ -126,7 +128,7 @@ export class PlayerPanelComponent implements OnInit, OnChanges {
 
     } else {
       this._renderer.removeClass(inputElement, 'invalid-input');
-      this._http.get(`${WORD_API_URL}/${inputValue}`)
+      this._http.get(`${this.WORD_API_URL}/${inputValue}`)
         .pipe(first())
         .subscribe((result: any) => {
           if (result.response === false) {

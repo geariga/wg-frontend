@@ -2,9 +2,6 @@
 
 import { TileMap } from "./types";
 
-//// HTTP CONSTANTS ////
-export const WORD_API_URL = 'http://localhost:9090/api/word'; // This needs updated for prod
-
 //// EVENT CONSTANTS ////
 export const UPDATE_GLOBAL_STATE_FROM_SERVER = 'update-global-state-from-server';
 export const UPDATE_LOCAL_STATE_FROM_SERVER = 'update-local-state-from-server';
