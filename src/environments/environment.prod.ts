@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  socketServer: "https://wg-backend.herokuapp.com/"
+  socketServer: "https://wg-backend.herokuapp.com"
 };

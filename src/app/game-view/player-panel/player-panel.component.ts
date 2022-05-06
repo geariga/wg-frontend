@@ -128,7 +128,7 @@ export class PlayerPanelComponent implements OnInit, OnChanges {
 
     } else {
       this._renderer.removeClass(inputElement, 'invalid-input');
-      this._http.get(`${this.WORD_API_URL}/${inputValue}`)
+      this._http.get(`${this.WORD_API_URL}/api/word/${inputValue}`)
         .pipe(first())
         .subscribe((result: any) => {
           if (result.response === false) {
